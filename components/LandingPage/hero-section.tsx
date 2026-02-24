@@ -14,7 +14,7 @@ export default function Herosection() {
       transition={{ duration: 1.0, ease: "easeOut" }}
       className="h-screen flex items-center justify-center"
     >
-        <section className="flex flex-col md:flex-row dark:bg-[##101828] items-center justify-center mt-60 md:mt-35 gap-10 lg:gap-16 px-6 md:px-12 lg:px-24 py-16 lg:py-24">
+        <section className="flex flex-col md:flex-row dark:bg-[#101828] items-center justify-center mt-60 md:mt-35 gap-10 lg:gap-16 px-6 md:px-12 lg:px-24 py-16 lg:py-24">
           <Image
             src="/header.jpg"
             alt="Header"

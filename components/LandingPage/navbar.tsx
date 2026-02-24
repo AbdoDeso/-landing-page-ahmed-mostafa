@@ -11,56 +11,9 @@ import {
   faMoon,
   faSun,
 } from '@fortawesome/free-solid-svg-icons'
-
+import { useTheme } from '@/app/lib/useTheme';
 export default function NavbarComponent() {
-      const [pageLoaded, setPageLoaded] = useState(false)
-  const { theme, toggleTheme, ready } = useTheme()
-
-  useEffect(() => {
-    setTimeout(() => setPageLoaded(true), 80)
-  }, [])
-
-  if (!ready) {
-    return <div className="min-h-screen bg-white dark:bg-gray-950" />
-  }
-  
-type Theme = 'light' | 'dark'
-
-function useTheme() {
-  const [theme, setTheme] = useState<Theme | null>(null)
-
-  useEffect(() => {
-    const saved = localStorage.getItem('theme') as Theme | null
-    if (saved) {
-      setTheme(saved)
-      return
-    }
-
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark')
-    } else {
-      setTheme('light')
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!theme) return
-
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-
-    localStorage.setItem('theme', theme)
-  }, [theme])
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
-  }
-
-  return { theme, toggleTheme, ready: theme !== null }
-}
+    const { theme, toggleTheme } = useTheme();
     return (
         <>
 <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 h-24 px-8 lg:px-16 items-center justify-between bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm">
