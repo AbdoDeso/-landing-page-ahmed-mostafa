@@ -7,10 +7,10 @@ export default function Herosection() {
         <div>
 
              <motion.section
-      initial={{ opacity: 0, y: 30 }} // Start 50px lower and invisible
+      initial={{ opacity: 0, y: 50 }} // Start 50px lower and invisible
       whileInView={{ opacity: 1, y: 0 }} // Move to original position and fade in
       viewport={{ once: true, margin: "-100px" }} // Trigger once, 100px before it hits the top
-      transition={{ duration: 1.5, ease: "easeOut" }}
+      transition={{ duration: 1.0, ease: "easeOut" }}
       className="h-screen flex items-center justify-center"
     >
         <section className="flex flex-col md:flex-row dark:bg-[#101828] items-center justify-center mt-60 md:mt-40 gap-10 lg:gap-16 px-6 md:px-12 lg:px-24 py-16 lg:py-24">
