@@ -36,7 +36,7 @@ export default function SimpleSlider() {
             <img src={src} alt={`Slide ${idx}`} className="w-full h-full object-cover" />
             
             {/* ✅ Caption: use 'idx' from map + 'slideTitles' object */}
-            <p className="absolute bottom-10 left-1/2  -translate-x-1/2 text-white bg-black/50 px-4 py-2 rounded-lg">
+            <p className="absolute bottom-10 left-1/2 text-[10px]  -translate-x-1/2 text-white bg-black/50 px-4 py-2 rounded-lg">
               {slideTitles[idx]}
             </p>
           </div>
