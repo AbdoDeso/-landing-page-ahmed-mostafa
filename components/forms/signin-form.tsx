@@ -1,0 +1,139 @@
+"use client";
+import Link from "next/link";
+
+
+import { useEffect, useRef, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faClipboardUser,
+  faArrowRightFromBracket,
+  faBook,
+  faMoon,
+  faSun,
+} from '@fortawesome/free-solid-svg-icons'
+
+
+
+const styles = {
+  container: "w-full max-w-md mx-auto mt-10 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md",
+  header: "space-y-1 text-center",
+  title: "text-4xl font-bold text-white ",
+  input: "w-full  px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-gray-400",
+  content: "space-y-4 ",
+  fieldGroup: "space-y-2 ",
+  footer: "flex flex-col ",
+  button: "w-[150px] m-auto bg-white mt-4 hover:bg-black hover:text-white font-bold rounded-xl transition-colors duration-300",
+  prompt: "mt-4 text-center text-black dark:text-white text-sm",
+  link: "ml-2 text-red-600 hover:text-black dark:text-blue-600 dark:hover:text-blue-100   transition-colors duration-300",
+};
+
+export function SigninForm() {
+      ///////////////////////////
+        const [pageLoaded, setPageLoaded] = useState(false)
+        const { theme, toggleTheme, ready } = useTheme()
+      
+        useEffect(() => {
+          setTimeout(() => setPageLoaded(true), 80)
+        }, [])
+      
+        if (!ready) {
+          return <div className="min-h-screen bg-white dark:bg-gray-950" />
+        }
+        
+      type Theme = 'light' | 'dark'
+      
+      function useTheme() {
+        const [theme, setTheme] = useState<Theme | null>(null)
+      
+        useEffect(() => {
+          const saved = localStorage.getItem('theme') as Theme | null
+          if (saved) {
+            setTheme(saved)
+            return
+          }
+      
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark')
+          } else {
+            setTheme('light')
+          }
+        }, [])
+      
+        useEffect(() => {
+          if (!theme) return
+      
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
+      
+          localStorage.setItem('theme', theme)
+        }, [theme])
+      
+        const toggleTheme = () => {
+          setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
+        }
+      
+        return { theme, toggleTheme, ready: theme !== null }
+      }
+      ///////////////////////////
+  return (
+    <div className={styles.container}>
+            <button
+            onClick={toggleTheme}
+            className="text-2xl text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform mb-4 self-end"
+            aria-label="تبديل الوضع الليلي"
+          >
+            <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
+            تبديل الوضع الليلي
+          </button>
+      <form>
+        <div>
+          <div className={styles.header}>
+            <h2 className={styles.title}>تسجيل الدخول</h2>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              أدخل بياناتك لتسجيل الدخول إلى حسابك
+            </p>
+          </div>
+          <br />
+          <div  className={styles.content}>
+            <div className={styles.fieldGroup}>
+              <h2 id="email" className="text-sm font-medium text-gray-700 dark:text-gray-300">البريد الإلكتروني أو اسم المستخدم</h2>
+              <input
+                id="identifier"
+                name="identifier"
+                type="text"
+                placeholder="ادخل البريد الإلكتروني أو اسم المستخدم"
+                className={styles.input}
+              />
+            </div>
+            <div className={styles.fieldGroup}>
+              <h2 id="password" className="text-sm font-medium text-gray-700 dark:text-gray-300">كلمة المرور</h2>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="ادخل كلمة المرور"
+                className={styles.input}
+              />
+            </div>
+          </div>
+          <div className={styles.footer}>
+            <button className={styles.button} type="submit">تسجيل الدخول</button>
+          </div>
+        </div>
+        <div className={styles.prompt}>
+            ليس لديك حساب؟&nbsp; &nbsp;
+          <Link className={styles.link} href="signup">
+            إنشاء حساب جديد
+          </Link>
+          <br />
+          <Link className={styles.link} href="/">
+            العودة إلى الصفحة الرئيسية
+          </Link>
+        </div>
+      </form>
+    </div>
+  );
+}
