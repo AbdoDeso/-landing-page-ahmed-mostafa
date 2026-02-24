@@ -17,12 +17,12 @@ import {
 const styles = {
   container: "w-full max-w-md mx-auto mt-10 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md",
   header: "space-y-1 text-center",
-  title: "text-4xl font-bold text-white ",
+  title: "text-4xl font-bold text-black dark:text-white ",
   input: "w-full  px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-gray-400",
   content: "space-y-4 ",
   fieldGroup: "space-y-2 ",
   footer: "flex flex-col ",
-  button: "w-[150px] m-auto bg-white mt-4 hover:bg-black hover:text-white font-bold rounded-xl transition-colors duration-300",
+  button: "w-[150px] m-auto text-white dark:text-black dark:hover:bg-blue-700 bg-black dark:bg-white mt-4 hover:bg-red-700 hover:text-white font-bold rounded-xl transition-colors duration-300",
   prompt: "mt-4 text-center text-black dark:text-white text-sm",
   link: "ml-2 text-red-600 hover:text-black dark:text-blue-600 dark:hover:text-blue-100   transition-colors duration-300",
 };

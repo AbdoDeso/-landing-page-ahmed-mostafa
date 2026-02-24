@@ -5,29 +5,19 @@ import { useEffect, useState } from 'react'
 type Theme = 'light' | 'dark'
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme | null>(null)
+  const [theme, setTheme] = useState<Theme>('dark')   // ← changed
 
-  // 1. On mount → read from localStorage or system preference
+  // 1. On mount → only try to restore saved preference (if any)
   useEffect(() => {
     const saved = localStorage.getItem('theme') as Theme | null
-
     if (saved) {
       setTheme(saved)
-      return
     }
-
-    // system preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark')
-    } else {
-      setTheme('light')
-    }
+    // If no saved value → keep using the initial 'dark'
   }, [])
 
-  // 2. Whenever theme changes → update class & localStorage
+  // 2. Whenever theme changes → update DOM + save
   useEffect(() => {
-    if (!theme) return
-
     if (theme === 'dark') {
       document.documentElement.classList.add('dark')
     } else {
@@ -41,5 +31,5 @@ export function useTheme() {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark')
   }
 
-  return { theme, toggleTheme, isLoaded: theme !== null }
+  return { theme, toggleTheme, isLoaded: true } // no longer need null check
 }
