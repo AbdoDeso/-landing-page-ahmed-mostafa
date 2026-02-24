@@ -5,9 +5,9 @@ export default function fourthSection() {
     return (
         <div>
     <motion.section
-      initial={{ opacity: 0, y: 50 }} // Start 50px lower and invisible
-      whileInView={{ opacity: 1, y: 0 }} // Move to original position and fade in
-      viewport={{ once: true, margin: "-100px" }} // Trigger once, 100px before it hits the top
+      initial={{ opacity: 0, y: 50 }} 
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }} 
       transition={{ duration: 1.0, ease: "easeOut" }}
       className="h-screen flex items-center justify-center"
     >

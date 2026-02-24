@@ -12,7 +12,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { useTheme } from '@/app/lib/useTheme';
 export default function NavbarComponent() {
+
+  /////////////////////////////////////////////
     const { theme, toggleTheme } = useTheme();
+    ////////////////////////////////////////////
     return (
         <>
 <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 h-24 px-8 lg:px-16 items-center justify-between bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm">
@@ -99,7 +102,7 @@ export default function NavbarComponent() {
           <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
         </button>
       </nav>
-      {/* navbar alter */}   
+      {/* navbar mobile */}   
       </>
      );
 };

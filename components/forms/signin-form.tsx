@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 
-
-import { useEffect, useState } from 'react';
+import { useTheme } from "@/app/lib/useTheme";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faMoon,
@@ -25,56 +24,10 @@ const styles = {
 };
 
 export function SigninForm() {
-      ///////////////////////////
-        const [pageLoaded, setPageLoaded] = useState(false)
-        const { theme, toggleTheme, ready } = useTheme()
-      
-        useEffect(() => {
-          setTimeout(() => setPageLoaded(true), 80)
-        }, [])
-      
-        if (!ready) {
-          return <div className="min-h-screen bg-white dark:bg-gray-950" />
-        }
-        
-      type Theme = 'light' | 'dark'
-      
-      function useTheme() {
-  const [theme, setTheme] = useState<Theme>('dark')   // ← changed
-      
-        useEffect(() => {
-          const saved = localStorage.getItem('theme') as Theme | null
-          if (saved) {
-            setTheme(saved)
-            return
-          }
-      
-          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark')
-          } else {
-            setTheme('light')
-          }
-        }, [])
-      
-        useEffect(() => {
-          if (!theme) return
-      
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark')
-          } else {
-            document.documentElement.classList.remove('dark')
-          }
-      
-          localStorage.setItem('theme', theme)
-        }, [theme])
-      
-        const toggleTheme = () => {
-          setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
-        }
-      
-        return { theme, toggleTheme, ready: theme !== null }
-      }
-      ///////////////////////////
+
+  /////////////////////////////////////////////
+    const { theme, toggleTheme } = useTheme();
+    ////////////////////////////////////////////
   return (
     <div className={styles.container}>
             <button

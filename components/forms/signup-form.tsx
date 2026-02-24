@@ -1,16 +1,13 @@
 "use client";
 import Link from "next/link";
 
-import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faClipboardUser,
-  faArrowRightFromBracket,
   faBook,
   faMoon,
   faSun,
 } from '@fortawesome/free-solid-svg-icons'
-
+import { useTheme } from "@/app/lib/useTheme";
 
 
 
@@ -30,56 +27,10 @@ const styles = {
 
 export function SignupForm() {
  
-  ///////////////////////////
-    const [pageLoaded, setPageLoaded] = useState(false)
-    const { theme, toggleTheme, ready } = useTheme()
-  
-    useEffect(() => {
-      setTimeout(() => setPageLoaded(true), 80)
-    }, [])
-  
-    if (!ready) {
-      return <div className="min-h-screen bg-white dark:bg-gray-950" />
-    }
-    
-  type Theme = 'light' | 'dark'
-  
-  function useTheme() {
-  const [theme, setTheme] = useState<Theme>('dark')   // ← changed
-  
-    useEffect(() => {
-      const saved = localStorage.getItem('theme') as Theme | null
-      if (saved) {
-        setTheme(saved)
-        return
-      }
-  
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setTheme('dark')
-      } else {
-        setTheme('light')
-      }
-    }, [])
-  
-    useEffect(() => {
-      if (!theme) return
-  
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-  
-      localStorage.setItem('theme', theme)
-    }, [theme])
-  
-    const toggleTheme = () => {
-      setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
-    }
-  
-    return { theme, toggleTheme, ready: theme !== null }
-  }
-  ///////////////////////////
+
+  /////////////////////////////////////////////
+    const { theme, toggleTheme } = useTheme();
+    ////////////////////////////////////////////
   return (
     <div className={styles.container}>
          <button
@@ -87,10 +38,8 @@ export function SignupForm() {
             className="text-2xl text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform mb-4 self-end"
             aria-label="تبديل الوضع الليلي"
           >
-
             <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
                         تبديل الوضع الليلي
-
           </button>
       <form method="POST">
 
