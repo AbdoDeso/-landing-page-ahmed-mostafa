@@ -14,9 +14,9 @@ export default function Footer() {
                     />
             <div className=" text-black dark:text-white text-center p-5 rounded-2xl mt-5 shadow-lg  bg- dark:bg-[#31314f] transition-transform duration-500">
                 <a href="https://www.facebook.com" target='/blank'>    <FontAwesomeIcon icon={faFacebook} className="text-[40px]" />       </a> 
-                <a href="https://wwww.youtube.com" target='/blank'>    <FontAwesomeIcon icon={faYoutube} className="text-[40px]" />        </a>          
+                <a href="https://www.youtube.com" target='/blank'>    <FontAwesomeIcon icon={faYoutube} className="text-[40px]" />        </a>          
                 <a href="https://www.instagram.com"target='/blank'>    <FontAwesomeIcon icon={faInstagram} className="text-[40px]" />      </a>            
-                <a href="https://wwww.linkedin.com"target='/blank'>    <FontAwesomeIcon icon={faSquareLinkedin} className="text-[40px]" /> </a>                 
+                <a href="https://www.linkedin.com"target='/blank'>    <FontAwesomeIcon icon={faSquareLinkedin} className="text-[40px]" /> </a>                 
                 <a href="https://www.x.com" target='/blank'>    <FontAwesomeIcon icon={faXTwitter} className="text-[40px]" /> <br /></a>                 
                 </div>
             <div className=" mt-10 md:mt-0 p-5 text-black dark:text-white text-center rounded-2xl  shadow-lg  transition-transform duration-500">
