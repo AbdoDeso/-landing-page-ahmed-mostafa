@@ -18,7 +18,7 @@ export default function NavbarComponent() {
 <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 h-24 px-8 lg:px-16 items-center justify-between bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm">
         <div className="flex items-center gap-6 lg:gap-10">
           <a
-            href="/signup"
+            href="https://elmofed.online/register/"
             className="flex items-center gap-2 text-lg font-bold bg-[#31314f] hover:bg-black text-white px-5 py-2.5 rounded-lg transition-colors duration-300"
           >
             انشئ حسابك
@@ -26,7 +26,7 @@ export default function NavbarComponent() {
           </a>
 
           <a
-            href="/signin"
+            href="https://elmofed.online/login/"
             className="flex items-center gap-2 text-lg font-bold bg-[#31314f] hover:bg-black text-white px-5 py-2.5 rounded-lg transition-colors duration-300"
           >
             تسجيل الدخول
@@ -75,10 +75,10 @@ export default function NavbarComponent() {
 
       <nav className="md:hidden fixed top-0 left-0 right-0 z-50 h-20 bg-white dark:bg-black text-white flex items-center justify-between px-5">
         <div className="flex gap-4">
-          <a href="signup" className="text-sm bg-[#31314f] text-white px-3 py-1.5 rounded font-medium">
+          <a href="https://elmofed.online/register/" className="text-sm bg-[#31314f] text-white px-3 py-1.5 rounded font-medium">
             انشئ حسابك
           </a>
-          <a href="signin" className="text-sm bg-[#31314f]  text-white px-3 py-1.5 rounded font-medium">
+          <a href="https://elmofed.online/login/" className="text-sm bg-[#31314f]  text-white px-3 py-1.5 rounded font-medium">
             الدخول
           </a>
         </div>
