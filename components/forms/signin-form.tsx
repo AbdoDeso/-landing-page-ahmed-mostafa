@@ -43,7 +43,7 @@ export function SigninForm() {
       type Theme = 'light' | 'dark'
       
       function useTheme() {
-        const [theme, setTheme] = useState<Theme | null>(null)
+  const [theme, setTheme] = useState<Theme>('dark')   // ← changed
       
         useEffect(() => {
           const saved = localStorage.getItem('theme') as Theme | null
