@@ -33,7 +33,7 @@ export default function Herosection() {
               </span>
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Link href="signup" className="px-8 py-4 bg-red-600 hover:bg-black text-white text-2xl font-bold rounded-xl transition-colors duration-300">
+              <Link href="https://elmofed.online/register/" className="px-8 py-4 bg-red-600 hover:bg-black text-white text-2xl font-bold rounded-xl transition-colors duration-300">
                 سجل الآن
               </Link>
               <Link href="#about" className="px-8 py-4 bg-red-600 hover:bg-black text-white text-2xl font-bold rounded-xl transition-colors duration-300 text-lg">

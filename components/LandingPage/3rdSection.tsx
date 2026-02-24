@@ -22,7 +22,7 @@ export default function ThirdSection() {
 
             </h6>
             <p className="text-lg leading-relaxed">
-              اختر من بين مجموعة متنوعة من الكورسات في مختلف المجالات العلمية والأدبية، <br /><br /><a href='/signup' className='text-blue-600 dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300'>وابدأ رحلتك التعليمية معنا اليوم</a>
+              اختر من بين مجموعة متنوعة من الكورسات في مختلف المجالات العلمية والأدبية، <br /><br /><a href='https://elmofed.online/register/' className='text-blue-600 dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300'>وابدأ رحلتك التعليمية معنا اليوم</a>
             </p>
           </div>
         </section>
