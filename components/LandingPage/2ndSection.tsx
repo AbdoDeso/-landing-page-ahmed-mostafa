@@ -1,28 +1,20 @@
 
 
 import { motion } from  "framer-motion";
-import Image from "next/image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faClipboardUser,
-  faArrowRightFromBracket,
-  faBook,
-  faMoon,
-  faSun,
-  faPeoplePulling,
-  faPeopleGroup,
   faPersonCircleCheck,
   faClock,
 } from '@fortawesome/free-solid-svg-icons'
-import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 export default function SecondSection() {
     return (
         <div>
-              <motion.section
-      initial={{ opacity: 0, y: 50 }} // Start 50px lower and invisible
+            <motion.section
+      initial={{ opacity: 0, y: 30 }} // Start 50px lower and invisible
       whileInView={{ opacity: 1, y: 0 }} // Move to original position and fade in
       viewport={{ once: true, margin: "-100px" }} // Trigger once, 100px before it hits the top
-      transition={{ duration: 1.0, ease: "easeOut" }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
       className="h-screen flex items-center justify-center"
     >
         <section className="flex flex-col lg:flex-row dark:bg-[#101828] items-center justify-center mt-100 md:mt-50 -10 lg:gap-20 px-6 md:px-12 lg:px-28 py-16 lg:py-24">

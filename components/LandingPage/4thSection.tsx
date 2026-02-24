@@ -1,9 +1,16 @@
 import Image from "next/image";
+import { motion } from  "framer-motion";
 
 export default function fourthSection() {
     return (
         <div>
-
+          <motion.section
+      initial={{ opacity: 0, y: 30 }} // Start 50px lower and invisible
+      whileInView={{ opacity: 1, y: 0 }} // Move to original position and fade in
+      viewport={{ once: true, margin: "-100px" }} // Trigger once, 100px before it hits the top
+      transition={{ duration: 1.5, ease: "easeOut" }}
+      className="h-screen flex items-center justify-center"
+    >
         <section className="flex flex-col md:flex-col lg:flex-row dark:bg-[#101828] lg:flex-row items-center justify-center mt-150 md:mt-35  gap-10 lg:gap-20 px-6 md:px-12 lg:px-28 py-16 lg:py-24">
           
           <div className="  bg-gray-100 dark:bg-gray-800 w-full h-[550px] rounded-3xl p-8 lg:p-12 text-center max-w-lg shadow-xl hover:scale-[1.02] transition-transform duration-500">
@@ -58,6 +65,7 @@ export default function fourthSection() {
             </p>
           </div>
         </section>
+        </motion.section>
         </div>
     );
 };

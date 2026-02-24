@@ -1,5 +1,4 @@
 import { faFacebook, faInstagram, faSquareLinkedin, faTwitter, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image';
 export default function Footer() {

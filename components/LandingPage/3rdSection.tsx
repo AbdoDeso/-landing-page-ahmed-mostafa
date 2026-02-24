@@ -5,12 +5,12 @@ import { motion } from  "framer-motion";
 export default function ThirdSection() {
     return (
         <div id="about">
-             <motion.section
-      initial={{ opacity: 0, y: 50 }} // Start 50px lower and invisible
+               <motion.section
+      initial={{ opacity: 0, y: 30 }} // Start 50px lower and invisible
       whileInView={{ opacity: 1, y: 0 }} // Move to original position and fade in
       viewport={{ once: true, margin: "-100px" }} // Trigger once, 100px before it hits the top
-      transition={{ duration: 1.0, ease: "easeOut" }}
-      className="h-screen flex items-center justify-center  "
+      transition={{ duration: 1.5, ease: "easeOut" }}
+      className="h-screen flex items-center justify-center"
     >
         <section  className="flex flex-col dark:bg-[#101828] lg:flex-row items-center justify-center mt-150 md:mt-35  gap-10 lg:gap-20 px-6 md:px-12 lg:px-28 py-16 lg:py-24">
           <div className='w-full lg:w-1/2'>
